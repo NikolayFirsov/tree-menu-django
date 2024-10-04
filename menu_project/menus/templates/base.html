@@ -1,0 +1,26 @@
+{% load menu_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание "Древовидное меню"</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="menu">
+            <h3>Меню</h3>
+            {% draw_menu 'direct_link_menu' %}<!-- direct_link_menu это название меню -->
+            <!-- можно вставить еще одно меню как в строке выше, но с другим названием -->
+            <!-- {% draw_menu 'named_url_menu' %}  для проверки меню с именнованным урлами-->
+        </nav>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
